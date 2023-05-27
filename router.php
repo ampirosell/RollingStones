@@ -6,7 +6,7 @@ require_once ('controllers/album.controller.php');
 if (!empty($_GET['action'])) {
     $accion = $_GET['action'];
 } else {
-    $accion = 'albums';
+    $accion = 'home';
 }
 
 // parseo el string de action por "/" y me devuelve el arreglo
@@ -14,8 +14,11 @@ $params = explode('/', $accion);
 
 //
 switch ($params[0]) {
-    
-    case 'albums' || 'router.php':
+    case 'home' || 'router.php':
+        $controller = new AlbumController();
+        $controller->home();
+        break;
+    case 'albums':
         $controller=new AlbumController();
         $controller->serveAllAlbums();
         break;

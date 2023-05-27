@@ -15,7 +15,10 @@ class AlbumController{
             $this->view->showAllAlbums($albums);
         }
         else{
-            $this->view->showError();
+            $this->view->showError('error al obtener albums');
         }
+    }
+    public function home(){
+        $this->view->showHome();
     }
 }

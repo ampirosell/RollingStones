@@ -5,9 +5,18 @@ class AlbumView{
     function __construct(){
         $this->smarty = new Smarty();
     }
+    public function showHome(){
+        $this->smarty->assign('page', 'Inicio');
+        $this->smarty->display('inicio.tpl');
+    }
     public function showAllAlbums($albums){
         $this->smarty->assign('albums', $albums);
-        $this->smarty->assign('title','Inicio');
+        $this->smarty->assign('page','Albums de los Rolling Stones');
         $this->smarty->display('albums.tpl');
+    }
+    public function showError($msg){
+        $this->smarty->assign('page', 'Error');
+        $this->smarty->assign('msg', $msg);
+        $this->smarty->display('error.tpl');
     }
 }
