@@ -4,20 +4,21 @@ body {
     font-family:'Courier New', Courier, monospace;
     background-color: #afb5bc;
     color: #191236;
-  }
-  .page{
+}
+.page{
     width: 80%;
     margin:  auto;
     color:#17016e;
-  }
-  .container {
+}
+.container {
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
-  }
-  
-  /* Barra de navegación */
-  .navbar {
+}
+
+/* Barra de navegación */
+.navbar {
+    text-align: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -26,40 +27,41 @@ body {
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 999;
-  }
-  
-  .navbar ul {
+}
+
+.navbar ul {
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-  
+}
+
   .navbar li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  .navbar a {
-    display: block;
-    padding: 8px 12px;
-    text-decoration: none;
-    color: #555555;
-  }
-  
-  .navbar a:hover {
-    background-color: #BBBBBB;
-    color: #FFFFFF;
-  }
-  
-  /* Contenido principal */
-  .content {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    
+    .navbar a {
+        display: block;
+        padding: 8px 12px;
+        text-decoration: none;
+        color: #555555;
+    }
+    
+    .navbar a:hover {
+        background-color: #BBBBBB;
+        color: #FFFFFF;
+    }
+    
+    /* Contenido principal */
+    .content {
     margin-top: 20%; /* Ajusta el valor del margen según tus necesidades */
-  }
-  
-  h1, h2, h3 {
+    text-align: center;
+}
+
+h1, h2, h3 {
     color: #222222;
-  }
-  
-  p {
+}
+
+p {
     line-height: 1.5;
-  }
+}

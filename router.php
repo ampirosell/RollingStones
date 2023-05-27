@@ -33,7 +33,7 @@ switch ($params[0]) {
         break;
     case 'add':
         $controller=new AlbumController();
-        $controller->addAlbum();
+        $controller->pagAddAlbum();
         break; 
     /*case 'songs':
         $controller=new SongsController();

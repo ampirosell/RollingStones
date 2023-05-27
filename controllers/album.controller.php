@@ -27,9 +27,13 @@ class AlbumController{
             $this->view->showOneAlbum($album);
         }
     }
-    public function addAlbum(){
+    public function pagAddAlbum(){
         $this->view->showAddAlbum();
+    
     }
+    /*public function addAlbum(){
+        $album = $this->model->addAlbum();
+    }*/
     public function sobre(){
         $this->view->showSobre();
     }
