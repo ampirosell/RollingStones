@@ -12,22 +12,22 @@ if (!empty($_GET['action'])) {
 $params = explode('/', $accion);
 
 switch ($params[0]) {
-    case 'home' || 'router.php':
+    case 'home':
         $controller = new AlbumController();
         $controller->home();
         break;
-    case 'albums':
+    case 'albums' :
         $controller=new AlbumController();
         $controller->serveAllAlbums();
         break;
     case 'album':
-        if(isset($id)&&!empty($id)){
             $controller=new AlbumController();
             $controller->serveOneAlbum($id);
-        }
+        
         break;
     case 'sobre':
-        echo('trabajo de vanina y amparo'); 
+        $controller=new AlbumController();
+        $controller->sobre();
         break;
     /*case 'songs':
         $controller=new SongsController();

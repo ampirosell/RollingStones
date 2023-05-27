@@ -19,6 +19,10 @@ class AlbumView{
         $this->smarty->assign('page','Album de Rolling Stones');
         $this->smarty->display('album.tpl');
     }
+    public function showSobre(){
+        $this->smarty->assign('page','Sobre');
+        $this->smarty->display('sobre.tpl');
+    }
     public function showError($msg){
         $this->smarty->assign('page', 'Error');
         $this->smarty->assign('msg', $msg);

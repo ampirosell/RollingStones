@@ -27,4 +27,7 @@ class AlbumController{
     public function home(){
         $this->view->showHome();
     }
+    public function sobre(){
+        $this->view->showSobre();
+    }
 }
