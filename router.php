@@ -9,10 +9,8 @@ if (!empty($_GET['action'])) {
     $accion = 'home';
 }
 
-// parseo el string de action por "/" y me devuelve el arreglo
 $params = explode('/', $accion);
 
-//
 switch ($params[0]) {
     case 'home' || 'router.php':
         $controller = new AlbumController();
@@ -22,19 +20,18 @@ switch ($params[0]) {
         $controller=new AlbumController();
         $controller->serveAllAlbums();
         break;
-    /*case 'album':
+    case 'album':
         if(isset($id)&&!empty($id)){
-            $controller=new AlbumsController();
-            $controller->album($id);
+            $controller=new AlbumController();
+            $controller->serveOneAlbum($id);
         }
         break;
-    case 'songs':
+    case 'sobre':
+        echo('trabajo de vanina y amparo'); 
+        break;
+    /*case 'songs':
         $controller=new SongsController();
         $controller->songs();
-        break;
-    case 'sobre':
-        $controller=new SongsController(); //este nombre debe ser el nombre de la clase del controller
-        $controller->song(); 
         break;
     default: {
         $controller=new AlbumsController();

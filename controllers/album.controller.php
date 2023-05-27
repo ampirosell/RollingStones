@@ -18,6 +18,12 @@ class AlbumController{
             $this->view->showError('error al obtener albums');
         }
     }
+    public function serveOneAlbum($id){
+        $album=$this ->model->getOneAlbum($id);
+        if(!empty($album)){
+            $this->view->showOneAlbum($album);
+        }
+    }
     public function home(){
         $this->view->showHome();
     }

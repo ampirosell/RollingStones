@@ -10,5 +10,11 @@ class AlbumModel{
         $query->execute();
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+    public function getOneAlbum($id){
+        $query = $this->db->prepare('SELECT * FROM albums WHERE id = :id');
+        $query->bindValue(':id', $id, PDO::PARAM_INT);
+        $query->execute();
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
 
 }
