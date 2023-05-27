@@ -28,4 +28,8 @@ class AlbumView{
         $this->smarty->assign('msg', $msg);
         $this->smarty->display('error.tpl');
     }
+    public function showAddAlbum(){
+        $this->smarty->assign('page', 'Agregar Album');
+        $this->smarty->display('addAlbum.tpl');
+    }
 }

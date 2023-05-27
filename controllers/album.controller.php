@@ -9,6 +9,9 @@ class AlbumController{
         $this->model = new AlbumModel();
         $this->view = new AlbumView();
     }
+    public function home(){
+        $this->view->showHome();
+    }
     public function serveAllAlbums(){
         $albums=$this->model->getAllAlbums();
         if(!empty($albums)){
@@ -24,8 +27,8 @@ class AlbumController{
             $this->view->showOneAlbum($album);
         }
     }
-    public function home(){
-        $this->view->showHome();
+    public function addAlbum(){
+        $this->view->showAddAlbum();
     }
     public function sobre(){
         $this->view->showSobre();

@@ -7,10 +7,12 @@
             <link href="css\style.css" rel="stylesheet">
         </head>
         <body>
-            <header>
-                <h1>{$page}</h1>
-                <a href='home'>Home</a>
-                <a href='albums'>Albums</a>
-                <a href='album'>Elegir un album</a>
-                <a href='sobre'>Sobre</a>
+            <header class="navbar">
+                <h1 class="page">{$page}</h1>
+                <ul>
+                <li><a href='home'>Home</a></li>
+                <li><a href='albums'>Albums</a></li>
+                <li><a href='album'>Elegir un album</a></li>
+                <li><a href='sobre'>Sobre</a></li>
+                </ul>
             </header>

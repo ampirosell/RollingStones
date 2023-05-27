@@ -21,21 +21,30 @@ switch ($params[0]) {
         $controller->serveAllAlbums();
         break;
     case 'album':
+        $id=4;
+        if(isset($id)&&!empty($id)){
             $controller=new AlbumController();
             $controller->serveOneAlbum($id);
-        
+        }
         break;
     case 'sobre':
         $controller=new AlbumController();
         $controller->sobre();
         break;
+    case 'add':
+        $controller=new AlbumController();
+        $controller->addAlbum();
+        break; 
     /*case 'songs':
         $controller=new SongsController();
-        $controller->songs();
+        $controller->serveAllSongs();
         break;
+    case 'song':
+        $controller=new SongsController();
+        $controller->serveOneSong();
+        break;*/
     default: {
-        $controller=new AlbumsController();
-        $controller->error();
+        echo('Error en router');
         break;
-    }*/
+    }
 }
