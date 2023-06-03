@@ -1,8 +1,10 @@
 <?php
-require_once('libs\Smarty.class.php');
+require_once('libs/Smarty.class.php');
 class AlbumView{
     private $smarty;
+    
     function __construct(){
+        
         $this->smarty = new Smarty();
     }
     public function showHome(){
@@ -14,10 +16,11 @@ class AlbumView{
         $this->smarty->assign('page','Albums de los Rolling Stones');
         $this->smarty->display('albums.tpl');
     }
-    public function showOneAlbum($album){
-        $this->smarty->assign('album', $album);
-        $this->smarty->assign('page','Album de Rolling Stones');
-        $this->smarty->display('album.tpl');
+    public function showSongsByAlbum($albumCompleto,$id_album){
+        $this->smarty->assign('songs', $albumCompleto);
+        $this->smarty->assign('id_album', $id_album);
+        $this->smarty->assign('page','Canciones de Rolling Stones');
+        $this->smarty->display('songs.tpl');
     }
     public function showSobre(){
         $this->smarty->assign('page','Sobre');
@@ -28,8 +31,8 @@ class AlbumView{
         $this->smarty->assign('msg', $msg);
         $this->smarty->display('error.tpl');
     }
-    public function showAddAlbum(){
+    /*public function showAddAlbum(){
         $this->smarty->assign('page', 'Agregar Album');
         $this->smarty->display('addAlbum.tpl');
-    }
+    }*/
 }

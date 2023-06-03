@@ -1,8 +1,10 @@
 {include file="header.tpl"}
-<h1>Canciones de los Rolling Stones</h1>
+<div class="content">
 <ul>
     {foreach $songs as $song}
-        <li><a href="/album/{$song.id}">{$song.title}</a></li>
+        <li>Titulo: {$song->title_song}</li>
+        <li>Año: {$song->year_release}</li><br>
     {/foreach}
 </ul>
+</div>
 {include file="footer.tpl"}

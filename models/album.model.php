@@ -15,5 +15,10 @@ class AlbumModel{
         $query->execute(array($id));
         return $query->fetch(PDO::FETCH_OBJ);
     }
+    public function getSongsByAlbumID($id_album){
+        $query=$this->db->prepare('SELECT * FROM `songs` INNER JOIN albums on songs.id_album=albums.id_album WHERE albums.id_album=?');
+        $query->execute(array($id_album));
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
 
 }

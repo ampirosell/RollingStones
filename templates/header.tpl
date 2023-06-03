@@ -10,9 +10,9 @@
             <header class="navbar">
                 <h1 class="page">{$page}</h1>
                 <ul>
-                <li><a href='home'>Home</a></li>
-                <li><a href='albums'>Albums</a></li>
-                <li><a href='album'>Elegir un album</a></li>
-                <li><a href='sobre'>Sobre</a></li>
+                <li><a href='{BASE_URL}home'>Home</a></li>
+                <li><a href='{BASE_URL}albums'>Albums</a></li>
+                <li><a href='{BASE_URL}sobre'>Sobre</a></li>
+                <li><a href='{BASE_URL}login'>Log</a></li>
                 </ul>
             </header>

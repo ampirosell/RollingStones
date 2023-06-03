@@ -4,6 +4,6 @@
     <h4>a la discografia de...</h4>
     <h2>LOS ROLLING STONES</h2>
     <p>Inicie sesion para acceder a información de la banda</p>
-    {include file="login.tpl"}
+    <a href="login">Login</a>
 </div>
 {include file="footer.tpl"}

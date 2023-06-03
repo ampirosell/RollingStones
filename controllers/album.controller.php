@@ -12,7 +12,15 @@ class AlbumController{
     public function home(){
         $this->view->showHome();
     }
+    public function checkLoggedIn(){
+        session_start();
+        if(!isset($_SESSION['ID_USER'])){
+            header('Location: login');
+            die();
+        }
+    }
     public function serveAllAlbums(){
+        //$this->checkLoggedIn();
         $albums=$this->model->getAllAlbums();
         if(!empty($albums)){
             $this->view->showAllAlbums($albums);
@@ -21,17 +29,16 @@ class AlbumController{
             $this->view->showError('error al obtener albums');
         }
     }
-    public function serveOneAlbum($id){
-        $album=$this ->model->getOneAlbum($id);
-        if(!empty($album)){
-            $this->view->showOneAlbum($album);
-        }
+    public function serveOneAlbumAndSongs($id_album){
+        $albumCompleto=$this->model->getSongsByAlbumID($id_album);
+        $this->view->showSongsByAlbum($albumCompleto,$id_album);
     }
-    public function pagAddAlbum(){
+
+    /*public function pagAddAlbum(){
         $this->view->showAddAlbum();
     
     }
-    /*public function addAlbum(){
+    public function addAlbum(){
         $album = $this->model->addAlbum();
     }*/
     public function sobre(){

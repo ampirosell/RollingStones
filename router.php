@@ -2,6 +2,7 @@
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 require_once ('controllers/album.controller.php'); 
+require_once ('controllers/user.controller.php'); 
 
 if (!empty($_GET['action'])) {
     $accion = $_GET['action'];
@@ -10,32 +11,37 @@ if (!empty($_GET['action'])) {
 }
 
 $params = explode('/', $accion);
+$AlbumController = new AlbumController();
+$UserController = new UserController();
 
 switch ($params[0]) {
     case 'home':
-        $controller = new AlbumController();
-        $controller->home();
+        $AlbumController->home();
         break;
-    case 'albums' :
-        $controller=new AlbumController();
-        $controller->serveAllAlbums();
-        break;
-    case 'album':
-        $id=4;
-        if(isset($id)&&!empty($id)){
-            $controller=new AlbumController();
-            $controller->serveOneAlbum($id);
+    case 'login':
+        if(isset($_SESSION['ID'])){
+            $UserController->serveLogout();
+        }
+        else{
+            $UserController->serveLogin();
         }
         break;
-    case 'sobre':
-        $controller=new AlbumController();
-        $controller->sobre();
+    case 'verify':
+        $UserController->verify();
         break;
-    case 'add':
-        $controller=new AlbumController();
-        $controller->pagAddAlbum();
+    case 'albums' :
+        $AlbumController->serveAllAlbums();
+        break;
+    case 'album':
+        $AlbumController->serveOneAlbumAndSongs($params[1]);
+        break;
+    case 'sobre':
+        $AlbumController->sobre();
+        break;
+    /*case 'add':
+        $AlbumController->pagAddAlbum();
         break; 
-    /*case 'songs':
+    case 'songs':
         $controller=new SongsController();
         $controller->serveAllSongs();
         break;
