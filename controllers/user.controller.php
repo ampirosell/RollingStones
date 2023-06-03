@@ -2,7 +2,7 @@
 include_once('models/user.model.php');
 include_once('views/user.view.php');
 
-session_start();
+//session_start();
 class UserController{
     private $userModel;
     private $userView;
