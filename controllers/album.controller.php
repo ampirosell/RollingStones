@@ -3,45 +3,45 @@ include_once('models/album.model.php');
 include_once('views/album.view.php');
 
 class AlbumController{
-    private $model;
-    private $view;
+    private $albumModel;
+    private $albumView;
     public function __construct(){
-        $this->model = new AlbumModel();
-        $this->view = new AlbumView();
+        $this->albumModel = new AlbumModel();
+        $this->albumView = new AlbumView();
     }
     public function home(){
-        $this->view->showHome();
+        $this->albumView->showHome();
     }
     public function checkLoggedIn(){
         session_start();
-        if(!isset($_SESSION['ID_USER'])){
+        if(!isset($_SESSION['ID'])){
             header('Location: login');
             die();
         }
     }
     public function serveAllAlbums(){
-        //$this->checkLoggedIn();
-        $albums=$this->model->getAllAlbums();
+        $this->checkLoggedIn();
+        $albums=$this->albumModel->getAllAlbums();
         if(!empty($albums)){
-            $this->view->showAllAlbums($albums);
+            $this->albumView->showAllAlbums($albums);
         }
         else{
-            $this->view->showError('error al obtener albums');
+            $this->albumView->showError('error al obtener albums');
         }
     }
     public function serveOneAlbumAndSongs($id_album){
-        $albumCompleto=$this->model->getSongsByAlbumID($id_album);
-        $this->view->showSongsByAlbum($albumCompleto,$id_album);
+        $fullAlbum=$this->albumModel->getSongsByAlbumID($id_album);
+        $this->albumView->showSongsByAlbum($fullAlbum,$id_album);
     }
 
     /*public function pagAddAlbum(){
-        $this->view->showAddAlbum();
+        $this->valbumView->showAddAlbum();
     
     }
     public function addAlbum(){
-        $album = $this->model->addAlbum();
+        $album = $this->albumModel->addAlbum();
     }*/
     public function sobre(){
-        $this->view->showSobre();
+        $this->albumView->showSobre();
     }
 }

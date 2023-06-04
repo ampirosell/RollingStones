@@ -2,7 +2,7 @@
 include_once('models/user.model.php');
 include_once('views/user.view.php');
 
-//session_start();
+session_start(); 
 class UserController{
     private $userModel;
     private $userView;
@@ -13,9 +13,10 @@ class UserController{
     public function serveLogin(){
         $this->userView->showLogin();
     }
-    public function serveLogout(){
+    public function serveLogout($username){
+        $_SESSION['username'] = $username;
         session_destroy();
-        header('Location: /');
+        header('Location: login');
     }
     public function verify() {
         $username = $_POST['username'];
@@ -23,17 +24,17 @@ class UserController{
         $user = $this->userModel->getUserByUsername($username);
         if (!empty($user) && password_verify($password, $user['password_hash'])) {
             session_start();
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['user_name'] = $user['username'];
+            $_SESSION['ID'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
             $this->userView->showAfterLog($username);
-            //header('Location: home');//ver aca
+            //como hacer que quede conectado?
         } else {
             $this->userView->showLogin('login incorrecto');
         }
     }
-    /*public function checkLoggedIn(){
+    /*public function checkLoggedIn(){ //mejor en el album controller?
         session_start();
-        if(!isset($_SESSION['ID_USER'])){
+        if(!isset($_SESSION['ID'])){
             header('Location: login');
             die();
         }

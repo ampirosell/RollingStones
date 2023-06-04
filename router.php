@@ -19,12 +19,13 @@ switch ($params[0]) {
         $AlbumController->home();
         break;
     case 'login':
-        if(isset($_SESSION['ID'])){
-            $UserController->serveLogout();
+        $UserController->serveLogin();
+        break;
+    case 'logout':
+        if(isset($_SESSION['ID'])&&!empty($_SESSION['username'])){
+            $_SESSION['username']=$username;
         }
-        else{
-            $UserController->serveLogin();
-        }
+        $UserController->serveLogout($username);
         break;
     case 'verify':
         $UserController->verify();
