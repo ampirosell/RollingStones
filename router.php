@@ -22,10 +22,10 @@ switch ($params[0]) {
         $UserController->serveLogin();
         break;
     case 'logout':
-        if(isset($_SESSION['ID'])&&!empty($_SESSION['username'])){
+        /*if(isset($_SESSION['ID'])&&!empty($_SESSION['username'])){
             $_SESSION['username']=$username;
-        }
-        $UserController->serveLogout($username);
+        }*/
+        $UserController->logout();
         break;
     case 'verify':
         $UserController->verify();

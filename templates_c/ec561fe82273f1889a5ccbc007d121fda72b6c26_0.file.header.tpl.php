@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-04 19:03:27
+/* Smarty version 4.3.1, created on 2023-06-04 21:15:12
   from 'C:\xampp\htdocs\RollingStones\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_647cc3df4cfa64_17794294',
+  'unifunc' => 'content_647ce2c01a50e2_08252527',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ec561fe82273f1889a5ccbc007d121fda72b6c26' => 
     array (
       0 => 'C:\\xampp\\htdocs\\RollingStones\\templates\\header.tpl',
-      1 => 1685898034,
+      1 => 1685906109,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_647cc3df4cfa64_17794294 (Smarty_Internal_Template $_smarty_tpl) {
+function content_647ce2c01a50e2_08252527 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
     <html lang="en">
         <head>
@@ -45,7 +45,7 @@ sobre'>Sobre</a></li>
 login'>Login</a></li>
                     <?php if ((isset($_smarty_tpl->tpl_vars['username']->value))) {?>
                     <li><a href='<?php echo BASE_URL;?>
-login'>LOGOUT <?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+logout'>LOGOUT <?php echo $_smarty_tpl->tpl_vars['username']->value;?>
 </a></li>
                     <?php }?>
                 </ul>

@@ -1,6 +1,7 @@
 <?php
 include_once('models/user.model.php');
 include_once('views/user.view.php');
+require_once('helpers/auth.helper.php');
 
 session_start(); 
 class UserController{
@@ -15,9 +16,14 @@ class UserController{
     }
     public function serveLogout($username){
         $_SESSION['username'] = $username;
-        session_destroy();
-        header('Location: login');
+        $this->logout();
+        header('Location:home');
     }
+    public function logout() {
+        AuthHelper::logout();
+        header("Location: " . BASE_URL . 'home');
+    }
+
     public function verify() {
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -32,11 +38,4 @@ class UserController{
             $this->userView->showLogin('login incorrecto');
         }
     }
-    /*public function checkLoggedIn(){ //mejor en el album controller?
-        session_start();
-        if(!isset($_SESSION['ID'])){
-            header('Location: login');
-            die();
-        }
-    }*/
 }
