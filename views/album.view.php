@@ -22,10 +22,12 @@ class AlbumView{
         $this->smarty->assign('page','Albums de los Rolling Stones');
         $this->smarty->display('albums.tpl');
     }
-    public function showSongsByAlbum($albumCompleto,$id_album){
+    public function showSongsByAlbum($albumCompleto,$id_album, $title_album, $year_release){
         if(isset($_SESSION['username'])){   
             $this->smarty->assign('username',$_SESSION['username']);
         }
+        $this->smarty->assign('title_album', $title_album);
+        $this->smarty->assign('year_release', $year_release);
         $this->smarty->assign('songs', $albumCompleto);
         $this->smarty->assign('id_album', $id_album);
         $this->smarty->assign('page','Canciones de Rolling Stones');

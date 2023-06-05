@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-04 18:30:05
+/* Smarty version 4.3.1, created on 2023-06-05 21:03:31
   from 'C:\xampp\htdocs\RollingStones\templates\songs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_647cbc0d91c508_40797965',
+  'unifunc' => 'content_647e3183795425_69652814',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ef939ca447e729d66715960f731eb21190d6f6e8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\RollingStones\\templates\\songs.tpl',
-      1 => 1685833643,
+      1 => 1685991808,
       2 => 'file',
     ),
   ),
@@ -22,14 +22,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_647cbc0d91c508_40797965 (Smarty_Internal_Template $_smarty_tpl) {
+function content_647e3183795425_69652814 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="content">
 <ul>
-    <p>Album: <?php echo $_smarty_tpl->tpl_vars['titulo_album']->value;?>
-</p>
-    <p>Año: <?php echo $_smarty_tpl->tpl_vars['year_release']->value;?>
+    <h2><?php echo $_smarty_tpl->tpl_vars['title_album']->value;?>
+</h2>
+    <p>Año de lanzamiento: <?php echo $_smarty_tpl->tpl_vars['year_release']->value;?>
 </p>
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['songs']->value, 'song');

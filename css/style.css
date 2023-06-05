@@ -2,18 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family:'Courier New', Courier, monospace;
-    background-color: #afb5bc;
-    color: #191236;
-}
-.page{
-    width: 80%;
-    margin:  auto;
-    color:#17016e;
-}
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
+    background-color:#904ea9;
 }
 
 /* Barra de navegación */
@@ -23,7 +12,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #D3D3D3;
+    background-color: #452b60;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 999;
@@ -35,31 +24,31 @@ body {
     padding: 0;
 }
 
-  .navbar li {
-      display: inline-block;
-      margin-right: 10px;
-    }
+.navbar li {
+    display: inline-block;
+    margin-right: 10px;
+}
     
-    .navbar a {
-        display: block;
-        padding: 8px 12px;
-        text-decoration: none;
-        color: #555555;
-    }
+.navbar a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #555555;
+}
     
-    .navbar a:hover {
-        background-color: #BBBBBB;
-        color: #FFFFFF;
-    }
+.navbar a:hover {
+    background-color: #BBBBBB;
+    color: #FFFFFF;
+}
     
     /* Contenido principal */
-    .content {
-    margin-top: 20%; /* Ajusta el valor del margen según tus necesidades */
+.content .container {
+    margin-top: 10%;
     text-align: center;
 }
 
 h1, h2, h3 {
-    color: #222222;
+    color: #9f4a4a;
 }
 
 p {
