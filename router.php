@@ -1,8 +1,9 @@
 <?php
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
-require_once ('controllers/album.controller.php'); 
-require_once ('controllers/user.controller.php'); 
+require_once('controllers/album.controller.php');
+require_once('controllers/user.controller.php');
+require_once('controllers/Song.controller.php');
 
 if (!empty($_GET['action'])) {
     $accion = $_GET['action'];
@@ -13,6 +14,7 @@ if (!empty($_GET['action'])) {
 $params = explode('/', $accion);
 $AlbumController = new AlbumController();
 $UserController = new UserController();
+$SongController = new songController();
 
 switch ($params[0]) {
     case 'home':
@@ -22,15 +24,12 @@ switch ($params[0]) {
         $UserController->serveLogin();
         break;
     case 'logout':
-        /*if(isset($_SESSION['ID'])&&!empty($_SESSION['username'])){
-            $_SESSION['username']=$username;
-        }*/
         $UserController->logout();
         break;
     case 'verify':
         $UserController->verify();
         break;
-    case 'albums' :
+    case 'albums':
         $AlbumController->serveAllAlbums();
         break;
     case 'album':
@@ -39,19 +38,20 @@ switch ($params[0]) {
     case 'sobre':
         $AlbumController->sobre();
         break;
-    /*case 'add':
-        $AlbumController->pagAddAlbum();
-        break; 
     case 'songs':
-        $controller=new SongsController();
-        $controller->serveAllSongs();
+        $SongController->serveAllSongs();
+        break;
+    case 'addSong':
+        $SongController->ShowAddSong();
+        break;
+    case 'add':
+        $SongController->addSong();
         break;
     case 'song':
-        $controller=new SongsController();
-        $controller->serveOneSong();
-        break;*/
-    default: {
-        echo('Error en router');
+        $SongController->serveOneSong($params[1]);
         break;
-    }
+    default: {
+            echo ('Error en router');
+            break;
+        }
 }

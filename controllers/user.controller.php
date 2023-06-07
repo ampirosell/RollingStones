@@ -3,7 +3,7 @@ include_once('models/user.model.php');
 include_once('views/user.view.php');
 require_once('helpers/auth.helper.php');
 
-session_start(); 
+//session_start(); 
 class UserController{
     private $userModel;
     private $userView;
@@ -33,7 +33,7 @@ class UserController{
             $_SESSION['ID'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             $this->userView->showAfterLog($username);
-            //como hacer que quede conectado?
+            //como hacer que quede conectado? sin error
         } else {
             $this->userView->showLogin('login incorrecto');
         }

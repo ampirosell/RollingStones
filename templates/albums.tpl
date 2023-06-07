@@ -1,11 +1,11 @@
 {include file="header.tpl"}
-<div class="content">
+<div class="content albums">
     <ul>
         {foreach $albums as $album}
             <li><p>Album numero {$album->id_album}</p></li>
             <li><a href="album/{$album->id_album}">{$album->titulo_album}</a></li>
             <li>{$album->year_release}</li>
-            <li><img src="{$album->img_cover}" alt="portada del album {$album->titulo_album}"></li>
+            <li><img class="cover" src="{$album->img_cover}" alt="portada del album {$album->titulo_album}"></li>
         {/foreach}
     </ul>
 </div>

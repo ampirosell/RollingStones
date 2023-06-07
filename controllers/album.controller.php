@@ -12,15 +12,15 @@ class AlbumController{
     public function home(){
         $this->albumView->showHome();
     }
-    public function checkLoggedIn(){
+/*    public function checkLoggedIn(){
         session_start();
         if(!isset($_SESSION['ID'])){
             header('Location: login');
             die();
         }
-    }
+    }*/
     public function serveAllAlbums(){
-        $this->checkLoggedIn();
+        AuthHelper::checkLoggedIn();
         $albums=$this->albumModel->getAllAlbums();
         if(!empty($albums)){
             $this->albumView->showAllAlbums($albums);
@@ -34,8 +34,13 @@ class AlbumController{
         $album=$this->albumModel->getOneAlbum($id_album);
         $title_album=$album->titulo_album;
         $year_release=$album->year_release;
-        $this->albumView->showSongsByAlbum($fullAlbumSongs,$id_album,$title_album,$year_release);
-    }
+        if(!empty($fullAlbumSongs)){
+            $this->albumView->showSongsByAlbum($fullAlbumSongs,$id_album,$title_album,$year_release);
+        }
+        else{
+            $this->albumView->showError('error al obtener canciones');
+        }
+        }
 
     /*public function pagAddAlbum(){
         $this->valbumView->showAddAlbum();

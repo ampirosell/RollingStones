@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-04 00:43:51
+/* Smarty version 4.3.1, created on 2023-06-06 23:06:07
   from 'C:\xampp\htdocs\RollingStones\templates\albums.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_647bc227df2022_81907676',
+  'unifunc' => 'content_647f9fbfc17207_15189950',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e1add13c8610894eb867dd8d251ca9be9c749c52' => 
     array (
       0 => 'C:\\xampp\\htdocs\\RollingStones\\templates\\albums.tpl',
-      1 => 1685832215,
+      1 => 1686084171,
       2 => 'file',
     ),
   ),
@@ -22,10 +22,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_647bc227df2022_81907676 (Smarty_Internal_Template $_smarty_tpl) {
+function content_647f9fbfc17207_15189950 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-<div class="content">
+<div class="content albums">
     <ul>
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['albums']->value, 'album');
@@ -40,7 +40,7 @@ $_smarty_tpl->tpl_vars['album']->do_else = false;
 </a></li>
             <li><?php echo $_smarty_tpl->tpl_vars['album']->value->year_release;?>
 </li>
-            <li><img src="<?php echo $_smarty_tpl->tpl_vars['album']->value->img_cover;?>
+            <li><img class="cover" src="<?php echo $_smarty_tpl->tpl_vars['album']->value->img_cover;?>
 " alt="portada del album <?php echo $_smarty_tpl->tpl_vars['album']->value->titulo_album;?>
 "></li>
         <?php

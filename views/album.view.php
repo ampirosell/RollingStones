@@ -6,6 +6,8 @@ class AlbumView{
     function __construct(){
         
         $this->smarty = new Smarty();
+        session_start();
+        
     }
     public function showHome(){
         if(isset($_SESSION['username'])){   

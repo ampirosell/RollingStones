@@ -6,7 +6,7 @@ class UserView{
     function __construct(){
         $this->smarty = new Smarty();
     }
-    public function showLogin($msg='Hola!'){
+    public function showLogin($msg='Inicie sesion para continuar'){
         $this->smarty->assign('msg', $msg);
         if(isset($_SESSION['username'])){   
             $this->smarty->assign('username',$_SESSION['username']);
