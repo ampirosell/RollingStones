@@ -33,7 +33,6 @@ class UserController{
             $_SESSION['ID'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             $this->userView->showAfterLog($username);
-            //como hacer que quede conectado? sin error
         } else {
             $this->userView->showLogin('login incorrecto');
         }

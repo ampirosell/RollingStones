@@ -18,7 +18,6 @@ class AuthHelper {
     }
 
     public static function checkLoggedIn() {
-
         if (!isset($_SESSION['username'])){
             header('Location: ' . BASE_URL . "login");
             die;
