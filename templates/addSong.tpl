@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 <div class="content">
     <h1> Agrega una cancion a un album</h1>
-    <form action="add" method=GET>
+    <form action="addS" method=GET>
         <input type="text" name="songName" placeholder="Inserte nombre de cancion">
         <select name="albumId">
             {foreach from=$select  item=$item}

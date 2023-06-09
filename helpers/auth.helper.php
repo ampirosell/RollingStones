@@ -2,8 +2,7 @@
 
 class AuthHelper {
 
-    public function __construct() {
-        //session_start();    
+    public function __construct() {   
     }
 
     

@@ -6,7 +6,6 @@ class AlbumView{
     function __construct(){
         
         $this->smarty = new Smarty();
-        session_start();
         
     }
     public function showHome(){
@@ -50,8 +49,11 @@ class AlbumView{
         $this->smarty->assign('msg', $msg);
         $this->smarty->display('error.tpl');
     }
-    /*public function showAddAlbum(){
+    public function showAddAlbum(){
+        if(isset($_SESSION['username'])){   
+            $this->smarty->assign('username',$_SESSION['username']);
+        }
         $this->smarty->assign('page', 'Agregar Album');
         $this->smarty->display('addAlbum.tpl');
-    }*/
+    }
 }

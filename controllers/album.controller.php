@@ -12,13 +12,7 @@ class AlbumController{
     public function home(){
         $this->albumView->showHome();
     }
-/*    public function checkLoggedIn(){
-        session_start();
-        if(!isset($_SESSION['ID'])){
-            header('Location: login');
-            die();
-        }
-    }*/
+
     public function serveAllAlbums(){
         AuthHelper::checkLoggedIn();
         $albums=$this->albumModel->getAllAlbums();
@@ -42,14 +36,26 @@ class AlbumController{
         }
         }
 
-    /*public function pagAddAlbum(){
-        $this->valbumView->showAddAlbum();
+    public function ShowAddAlbum(){
+        $this->albumView->showAddAlbum();
     
     }
     public function addAlbum(){
-        $album = $this->albumModel->addAlbum();
-    }*/
+        AuthHelper::checkLoggedIn();
+        $title_album =$_GET["title_album"];
+        $year_release=$_GET["year_release"];
+        $img_cover=$_GET["img_cover"];
+
+
+        if(!empty($title_album)&&!empty($year_release)){
+            $this->albumModel-> insertAlbum($title_album,$year_release,$img_cover); 
+            header('Location:' . BASE_URL . 'albums'); 
+        }
+    }
     public function sobre(){
         $this->albumView->showSobre();
+    }
+    public function showError($msg='error'){
+        $this->albumView->showError($msg);
     }
 }

@@ -38,17 +38,23 @@ class songController{
 
     public function addSong(){
         AuthHelper::checkLoggedIn();
-        //validar entrada datos
         $song =$_GET["songName"];
         $album_id=$_GET["albumId"];
-        $this->songModel-> insertSong($song,$album_id); 
-        header("Location: " . BASE_URL); 
-      
+        if(!empty($song)&&!empty($album)){
+            $this->songModel-> insertSong($song,$album_id); 
+            header("Location: " . BASE_URL . 'albums'. '/' . $album_id); 
+        }
     }
 
     public function deleteSong($id){
-        $this->songModel->deleteSongById($id);
-        header("Location: " . BASE_URL); 
+        AuthHelper::checkLoggedIn();
+        if(isset($id)&&!empty($id)){
+            $this->songModel->deleteSongById($id);
+            header("Location: " . BASE_URL . 'songs'); 
+        }
+        else{
+            $this->songView->showError('No se ha podido eliminar la canción');
+        }
     }
 }
 ?>

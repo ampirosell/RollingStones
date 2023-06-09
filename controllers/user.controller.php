@@ -3,13 +3,13 @@ include_once('models/user.model.php');
 include_once('views/user.view.php');
 require_once('helpers/auth.helper.php');
 
-//session_start(); 
 class UserController{
     private $userModel;
     private $userView;
     public function __construct(){
         $this->userModel = new UserModel();
         $this->userView = new UserView();
+        session_start();
     }
     public function serveLogin(){
         $this->userView->showLogin();

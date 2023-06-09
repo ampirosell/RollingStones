@@ -15,7 +15,8 @@
                     <li><a href='{BASE_URL}songs'>Canciones</a></li>
                     <li><a href='{BASE_URL}sobre'>Sobre</a></li>
                     {if isset($username)}
-                        <li><a href='{BASE_URL}addSong'>Agregar Cancion</a></li>
+                        <li><a href='{BASE_URL}addAlbum'>Agregar album nuevo</a></li>
+                        <li><a href='{BASE_URL}addSong'>Agregar cancion en album</a></li>
                         <li><a href='{BASE_URL}logout'>LOGOUT {$username}</a></li>
                     {else}
                         <li><a href='{BASE_URL}login'>Login</a></li>

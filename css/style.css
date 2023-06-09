@@ -50,6 +50,11 @@ body {
     margin-top: 20%;
     text-align: center;
 }
+input {
+    width: 95%;
+    border-radius: 8%;
+    border-color: #443357;
+}
 .albums{
     display: flexbox;
 }

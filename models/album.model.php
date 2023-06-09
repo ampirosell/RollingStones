@@ -20,5 +20,9 @@ class AlbumModel{
         $query->execute(array($id_album));
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
-
+    public function insertAlbum($title_album,$year_release,$img_cover=' '){
+        $query = $this->db->prepare("INSERT INTO `albums`  ( `titulo_album` ,`year_release` , `img_cover` ) VALUES (?,?,?)");
+        $query->execute(array($title_album,$year_release,$img_cover));
+        return $this->db->lastInsertId();
+    }
 }

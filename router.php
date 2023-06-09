@@ -17,14 +17,11 @@ $UserController = new UserController();
 $SongController = new songController();
 
 switch ($params[0]) {
-    case 'home':
-        $AlbumController->home();
-        break;
     case 'login':
         $UserController->serveLogin();
         break;
-    case 'logout':
-        $UserController->logout();
+    case 'home':
+        $AlbumController->home();
         break;
     case 'verify':
         $UserController->verify();
@@ -35,23 +32,31 @@ switch ($params[0]) {
     case 'album':
         $AlbumController->serveOneAlbumAndSongs($params[1]);
         break;
-    case 'sobre':
-        $AlbumController->sobre();
-        break;
     case 'songs':
         $SongController->serveAllSongs();
-        break;
-    case 'addSong':
-        $SongController->ShowAddSong();
-        break;
-    case 'add':
-        $SongController->addSong();
         break;
     case 'song':
         $SongController->serveOneSong($params[1]);
         break;
-    default: {
-            echo ('Error en router');
-            break;
-        }
+    case 'sobre':
+        $AlbumController->sobre();
+        break;
+    case 'addAlbum':
+        $AlbumController->ShowAddAlbum();
+        break;
+    /*case 'addA':
+        $AlbumController->addAlbum();
+        break;*/
+    case 'addSong':
+        $SongController->ShowAddSong();
+        break;
+    case 'addS':
+        $SongController->addSong();
+        break;
+    case 'logout':
+        $UserController->logout();
+        break;
+    default: 
+        $AlbumController->showError('Error en router');
+        break;
 }
