@@ -41,6 +41,21 @@ class AlbumView{
         $this->smarty->assign('page','Sobre');
         $this->smarty->display('sobre.tpl');
     }
+    public function showAddAlbum(){
+        if(isset($_SESSION['username'])){   
+            $this->smarty->assign('username',$_SESSION['username']);
+        }
+        $this->smarty->assign('page', 'Agregar Album');
+        $this->smarty->display('addAlbum.tpl');
+    }
+    public function showDeleteAlbumConfirmation($id){
+        if(isset($_SESSION['username'])){
+            $this->smarty->assign('username',$_SESSION['username']);
+        }
+        $this->smarty->assign('id', $id);
+        $this->smarty->assign('page', 'Eliminar Album');
+        $this->smarty->display('deleteAlbumConfirmation.tpl');
+    }
     public function showError($msg){
         if(isset($_SESSION['username'])){   
             $this->smarty->assign('username',$_SESSION['username']);
@@ -48,12 +63,5 @@ class AlbumView{
         $this->smarty->assign('page', 'Error');
         $this->smarty->assign('msg', $msg);
         $this->smarty->display('error.tpl');
-    }
-    public function showAddAlbum(){
-        if(isset($_SESSION['username'])){   
-            $this->smarty->assign('username',$_SESSION['username']);
-        }
-        $this->smarty->assign('page', 'Agregar Album');
-        $this->smarty->display('addAlbum.tpl');
     }
 }

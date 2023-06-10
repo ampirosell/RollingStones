@@ -6,25 +6,28 @@ require_once('controllers/user.controller.php');
 require_once('controllers/Song.controller.php');
 
 if (!empty($_GET['action'])) {
-    $accion = $_GET['action'];
+    $action = $_GET['action'];
 } else {
-    $accion = 'home';
+    $action = 'home';
 }
 
-$params = explode('/', $accion);
+$params = explode('/', $action);
 $AlbumController = new AlbumController();
 $UserController = new UserController();
 $SongController = new songController();
 
 switch ($params[0]) {
-    case 'login':
-        $UserController->serveLogin();
-        break;
     case 'home':
         $AlbumController->home();
         break;
+    case 'login':
+        $UserController->serveLogin();
+        break;
     case 'verify':
         $UserController->verify();
+        break;
+    case 'logout':
+        $UserController->logout();
         break;
     case 'albums':
         $AlbumController->serveAllAlbums();
@@ -44,17 +47,23 @@ switch ($params[0]) {
     case 'addAlbum':
         $AlbumController->ShowAddAlbum();
         break;
-    /*case 'addA':
-        $AlbumController->addAlbum();
-        break;*/
+    case 'addA':
+        $AlbumController->addA();
+        break;
     case 'addSong':
         $SongController->ShowAddSong();
         break;
     case 'addS':
-        $SongController->addSong();
+        $SongController->addS();
         break;
-    case 'logout':
-        $UserController->logout();
+    case 'deleteS':
+        $SongController->deleteSong($params[1]);
+        break;
+    case 'deleteA':
+        $AlbumController->deleteAlbumConfirmation($params[1]);
+        break;
+    case 'deleteAlbumConfirm':
+        $AlbumController->deleteAlbum($params[1]);
         break;
     default: 
         $AlbumController->showError('Error en router');

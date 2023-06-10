@@ -16,7 +16,7 @@ class songModel {
     }
 
     public function getSong($id) {
-        $sentencia = $this->db->prepare("SELECT * FROM `songs` WHERE id_album = ?");
+        $sentencia = $this->db->prepare("SELECT * FROM `songs` WHERE id_song = ?");
         $sentencia->execute([$id]);
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }

@@ -7,5 +7,8 @@
         <li>Titulo de la cancion numero {$song->id_song}: {$song->title_song}</li><br>
     {/foreach}
 </ul>
+{if isset($username) && $username=='admin'}
+    <a href="{BASE_URL}deleteA/{$id_album}"> Eliminar </a>   
+{/if}
 </div>
 {include file="footer.tpl"}

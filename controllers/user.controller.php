@@ -14,11 +14,6 @@ class UserController{
     public function serveLogin(){
         $this->userView->showLogin();
     }
-    public function serveLogout($username){
-        $_SESSION['username'] = $username;
-        $this->logout();
-        header('Location:home');
-    }
     public function logout() {
         AuthHelper::logout();
         header("Location: " . BASE_URL . 'home');
@@ -32,7 +27,7 @@ class UserController{
             session_start();
             $_SESSION['ID'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            $this->userView->showAfterLog($username);
+            header("Location: " . BASE_URL . 'home');
         } else {
             $this->userView->showLogin('login incorrecto');
         }

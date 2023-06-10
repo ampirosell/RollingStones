@@ -36,13 +36,16 @@ class songController{
         $this-> songView -> showAddSong($select);        
     }
 
-    public function addSong(){
+    public function addS(){
         AuthHelper::checkLoggedIn();
-        $song =$_GET["songName"];
-        $album_id=$_GET["albumId"];
-        if(!empty($song)&&!empty($album)){
+        $song =$_POST["songName"];
+        $album_id=$_POST["albumId"];
+        if(!empty($song)&&!empty($album_id)){
             $this->songModel-> insertSong($song,$album_id); 
-            header("Location: " . BASE_URL . 'albums'. '/' . $album_id); 
+            header("Location: " . BASE_URL . 'album'. '/' . $album_id); 
+        }
+        else{
+            $this-> songView -> showError('No se ha podido añadir la canción');
         }
     }
 

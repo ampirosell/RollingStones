@@ -13,12 +13,13 @@
                     <li><a href='{BASE_URL}home'>Home</a></li>
                     <li><a href='{BASE_URL}albums'>Albums</a></li>
                     <li><a href='{BASE_URL}songs'>Canciones</a></li>
-                    <li><a href='{BASE_URL}sobre'>Sobre</a></li>
                     {if isset($username)}
                         <li><a href='{BASE_URL}addAlbum'>Agregar album nuevo</a></li>
                         <li><a href='{BASE_URL}addSong'>Agregar cancion en album</a></li>
-                        <li><a href='{BASE_URL}logout'>LOGOUT {$username}</a></li>
+                        <li><a href='{BASE_URL}sobre'>Sobre nosotras</a></li>
+                        <li><a href='{BASE_URL}logout'>LogOut {$username}</a></li>
                     {else}
+                        <li><a href='{BASE_URL}sobre'>Sobre nosotras</a></li>
                         <li><a href='{BASE_URL}login'>Login</a></li>
                     {/if}
                 </ul>

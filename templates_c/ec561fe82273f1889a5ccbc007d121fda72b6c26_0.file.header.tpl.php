@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-08 03:18:21
+/* Smarty version 4.3.1, created on 2023-06-11 00:10:03
   from 'C:\xampp\htdocs\RollingStones\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_64812c5d5b87d0_81129201',
+  'unifunc' => 'content_6484f4bb378032_89001166',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ec561fe82273f1889a5ccbc007d121fda72b6c26' => 
     array (
       0 => 'C:\\xampp\\htdocs\\RollingStones\\templates\\header.tpl',
-      1 => 1686186528,
+      1 => 1686434998,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64812c5d5b87d0_81129201 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6484f4bb378032_89001166 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
     <html lang="en">
         <head>
@@ -42,17 +42,19 @@ home'>Home</a></li>
 albums'>Albums</a></li>
                     <li><a href='<?php echo BASE_URL;?>
 songs'>Canciones</a></li>
-                    <li><a href='<?php echo BASE_URL;?>
-sobre'>Sobre</a></li>
                     <?php if ((isset($_smarty_tpl->tpl_vars['username']->value))) {?>
                         <li><a href='<?php echo BASE_URL;?>
 addAlbum'>Agregar album nuevo</a></li>
                         <li><a href='<?php echo BASE_URL;?>
 addSong'>Agregar cancion en album</a></li>
                         <li><a href='<?php echo BASE_URL;?>
-logout'>LOGOUT <?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+sobre'>Sobre nosotras</a></li>
+                        <li><a href='<?php echo BASE_URL;?>
+logout'>LogOut <?php echo $_smarty_tpl->tpl_vars['username']->value;?>
 </a></li>
                     <?php } else { ?>
+                        <li><a href='<?php echo BASE_URL;?>
+sobre'>Sobre nosotras</a></li>
                         <li><a href='<?php echo BASE_URL;?>
 login'>Login</a></li>
                     <?php }?>

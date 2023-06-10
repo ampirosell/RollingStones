@@ -1,10 +1,10 @@
 {include file="header.tpl"}
 <div class="content">
-    <form id="addAlbum" method="get">
-        <input type="text" id="title_album" placeholder="titulo del album" required/>
-        <input type="text" id="year_release" placeholder="Año de lanzamiento" required/>
-        <input type="text" id="img_cover" placeholder="url libre a imagen"/>
-        <input type="submit" action="addAlbum()" name="Agregar">
+    <form action="addA" method="post">
+        <input type="text" name="title_album" placeholder="titulo del album" required/><br><br>
+        <input type="number" name="year_release" placeholder="Año de lanzamiento" required/><br><br>
+        <input type="text" name="img_cover" placeholder="url libre a imagen"/><br><br>
+        <input type="submit" name="Agregar">
     </form>
 </div>
 {include file="footer.tpl"}

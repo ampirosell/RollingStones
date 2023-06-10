@@ -25,4 +25,10 @@ class AlbumModel{
         $query->execute(array($title_album,$year_release,$img_cover));
         return $this->db->lastInsertId();
     }
+    public function deleteAlbumById($id){
+        $query=$this->db->prepare("DELETE from `albums` WHERE id_album= ? ");
+        $query2=$this->db->prepare("DELETE from `songs` WHERE id_album= ? ");
+        $query->execute([$id]);
+        $query2->execute([$id]);
+    }
 }

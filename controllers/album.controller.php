@@ -14,7 +14,6 @@ class AlbumController{
     }
 
     public function serveAllAlbums(){
-        AuthHelper::checkLoggedIn();
         $albums=$this->albumModel->getAllAlbums();
         if(!empty($albums)){
             $this->albumView->showAllAlbums($albums);
@@ -34,22 +33,35 @@ class AlbumController{
         else{
             $this->albumView->showError('error al obtener canciones');
         }
-        }
-
+    }
     public function ShowAddAlbum(){
         $this->albumView->showAddAlbum();
-    
     }
-    public function addAlbum(){
+    public function addA(){
         AuthHelper::checkLoggedIn();
-        $title_album =$_GET["title_album"];
-        $year_release=$_GET["year_release"];
-        $img_cover=$_GET["img_cover"];
-
-
+        $title_album =$_POST["title_album"];
+        $year_release=$_POST["year_release"];
+        $img_cover=$_POST["img_cover"];
         if(!empty($title_album)&&!empty($year_release)){
             $this->albumModel-> insertAlbum($title_album,$year_release,$img_cover); 
-            header('Location:' . BASE_URL . 'albums'); 
+            header("Location: " . BASE_URL . 'albums');
+        }
+        else{
+            $this->albumView->showError('error al insertar album');
+        }
+    }
+    public function deleteAlbumConfirmation($id){
+        AuthHelper::checkLoggedIn();
+        $this->albumView->showDeleteAlbumConfirmation($id);
+    }
+    public function deleteAlbum($id){
+        AuthHelper::checkLoggedIn();
+        if(isset($id)&&!empty($id)){
+            $this->albumModel->deleteAlbumById($id);
+            header("Location: " . BASE_URL . 'songs'); 
+        }
+        else{
+            $this->albumView->showError('No se ha podido eliminar la canción');
         }
     }
     public function sobre(){
