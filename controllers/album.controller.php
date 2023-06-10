@@ -58,7 +58,7 @@ class AlbumController{
         AuthHelper::checkLoggedIn();
         if(isset($id)&&!empty($id)){
             $this->albumModel->deleteAlbumById($id);
-            header("Location: " . BASE_URL . 'songs'); 
+            header("Location: " . BASE_URL . 'albums'); 
         }
         else{
             $this->albumView->showError('No se ha podido eliminar la canción');
