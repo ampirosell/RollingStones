@@ -8,8 +8,8 @@ class UserView{
     }
     public function showLogin($msg='Inicie sesion para continuar'){
         $this->smarty->assign('msg', $msg);
-        if(isset($_SESSION['username'])){   
-            $this->smarty->assign('username',$_SESSION['username']);
+        if(AuthHelper::getLoggedUserName()){   
+            $this->smarty->assign('username',AuthHelper::getLoggedUserName());
         }
         $this->smarty->assign('page', 'Login');
         $this->smarty->display('login.tpl');

@@ -2,7 +2,7 @@
 <div class="content">
     <h3 class="card-title">Nombre de la cancion: {$song->title_song}</h3>
     <p class="card-text">Cancion numero {$song->id_song} en el orden de todas las canciones de los Rolling Stones, album numero {$song->id_album}</p>
-    {if isset($username) && $username=='admin'}
+    {if isset($username)}
         <a href="{BASE_URL}deleteS/{$song->id_song}"> Eliminar </a>   
     {/if}
 </div>

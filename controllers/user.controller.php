@@ -9,7 +9,7 @@ class UserController{
     public function __construct(){
         $this->userModel = new UserModel();
         $this->userView = new UserView();
-        session_start();
+        AuthHelper::start();
     }
     public function serveLogin(){
         $this->userView->showLogin();
@@ -24,7 +24,7 @@ class UserController{
         $password = $_POST['password'];
         $user = $this->userModel->getUserByUsername($username);
         if (!empty($user) && password_verify($password, $user['password_hash'])) {
-            session_start();
+            AuthHelper::start();
             $_SESSION['ID'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             header("Location: " . BASE_URL . 'home');
