@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-12 00:16:51
+/* Smarty version 4.3.1, created on 2023-06-12 02:41:09
   from 'C:\xampp\htdocs\RollingStones\templates\songs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_648647d3a162f9_47416582',
+  'unifunc' => 'content_648669a5a89160_03415248',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ef939ca447e729d66715960f731eb21190d6f6e8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\RollingStones\\templates\\songs.tpl',
-      1 => 1686521502,
+      1 => 1686530458,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_648647d3a162f9_47416582 (Smarty_Internal_Template $_smarty_tpl) {
+function content_648669a5a89160_03415248 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="content">
@@ -38,8 +38,10 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['song']->value) {
 $_smarty_tpl->tpl_vars['song']->do_else = false;
 ?>
         <li>Titulo de la cancion numero <?php echo $_smarty_tpl->tpl_vars['song']->value->id_song;?>
-: <?php echo $_smarty_tpl->tpl_vars['song']->value->title_song;?>
-</li><br>
+: <a href="<?php echo BASE_URL;?>
+song/<?php echo $_smarty_tpl->tpl_vars['song']->value->id_song;?>
+"><?php echo $_smarty_tpl->tpl_vars['song']->value->title_song;?>
+</a></li><br>
     <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
