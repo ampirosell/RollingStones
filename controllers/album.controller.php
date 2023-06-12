@@ -51,7 +51,7 @@ class AlbumController{
         $img_cover=$_POST["img_cover"];
         if(!empty($title_album)&&!empty($year_release)){
             $this->albumModel-> insertAlbum($title_album,$year_release,$img_cover); 
-            header("Location: " . BASE_URL . 'albums');
+            header("Location: " . BASE_URL . 'albums' );
         }
         else{
             $this->albumView->showError('error al insertar album');
