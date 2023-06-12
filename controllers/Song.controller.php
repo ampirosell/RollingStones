@@ -15,6 +15,7 @@ class songController{
     }
     public function serveAllSongs(){
         AuthHelper::start();
+        AuthHelper::checkTime();
         $songs = $this-> songModel-> getSongs();
         if (!empty($songs))
             $this-> songView -> showSongs($songs);
@@ -25,6 +26,7 @@ class songController{
 
     public function serveOneSong($id){
         AuthHelper::start();
+        AuthHelper::checkTime();
         $song = $this-> songModel-> getSong($id);
         if (!empty($song))
             $this-> songView -> showSong($song);
@@ -34,7 +36,7 @@ class songController{
     }
 
     public function ShowAddSong(){
-        AuthHelper::start();
+        AuthHelper::checkLoggedIn();
         $select= $this-> songModel-> getSelect();
         $this-> songView -> showAddSong($select);        
     }
