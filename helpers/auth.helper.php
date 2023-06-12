@@ -5,11 +5,19 @@ class AuthHelper {
     public function __construct() {   
     }
     public static function start(){
-        session_start();
+        if(session_status()==PHP_SESSION_NONE){
+            session_start();
+        }
     }
     
     public static function logout() {
+        AuthHelper::start();
         session_destroy();
+    }
+
+    public static function setUser($user){
+        $_SESSION['ID'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
     }
 
     public static function checkLoggedIn() {

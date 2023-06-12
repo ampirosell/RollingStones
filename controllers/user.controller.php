@@ -9,9 +9,9 @@ class UserController{
     public function __construct(){
         $this->userModel = new UserModel();
         $this->userView = new UserView();
-        AuthHelper::start();
     }
     public function serveLogin(){
+        AuthHelper::start();
         $this->userView->showLogin();
     }
     public function logout() {
@@ -25,8 +25,7 @@ class UserController{
         $user = $this->userModel->getUserByUsername($username);
         if (!empty($user) && password_verify($password, $user['password_hash'])) {
             AuthHelper::start();
-            $_SESSION['ID'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
+            AuthHelper::setUser($user);
             header("Location: " . BASE_URL . 'home');
         } else {
             $this->userView->showLogin('login incorrecto');
