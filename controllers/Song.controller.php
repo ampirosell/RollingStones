@@ -1,5 +1,6 @@
 <?php
 require_once('models/Song.model.php');
+require_once('models/album.model.php');
 require_once('views/Song.view.php');
 
 
@@ -7,14 +8,15 @@ class songController{
 
     private $songView;
     private $songModel;
+    private $albumModel;
 
     function __construct(){
         $this->songView=new songView();
         $this->songModel=new songModel();
+        $this->albumModel=new albumModel();
 
     }
     public function serveAllSongs(){
-        AuthHelper::start();
         AuthHelper::checkTime();
         $songs = $this-> songModel-> getSongs();
         if (!empty($songs))
@@ -25,7 +27,6 @@ class songController{
     }
 
     public function serveOneSong($id){
-        AuthHelper::start();
         AuthHelper::checkTime();
         $song = $this-> songModel-> getSong($id);
         if (isset($song)&&!empty($song)){
@@ -63,6 +64,30 @@ class songController{
         }
         else{
             $this->songView->showError('No se ha podido eliminar la canción');
+        }
+    }
+    public function editSong($id,$id_album){
+        AuthHelper::checkLoggedIn();
+        $song = $this-> songModel-> getSong($id);
+        $album=$this->albumModel->getOneAlbum($id_album);
+        $albums=$this->albumModel->getAllAlbums();
+        if (!empty($song)&&isset($song)&&!empty($album)&&isset($album))
+            $this-> songView -> showEditSong($song,$album, $albums);
+        else
+            $this-> songView -> showError('No hay ninguna canción para mostrar.');
+            
+    }
+
+    public function updateSong($id){
+        AuthHelper::checkLoggedIn();
+        $newTitleSong=$_POST["title_song"];
+        $newIdAlbum=$_POST["albumId"];
+        if(isset($newTitleSong)&&!empty($newTitleSong)&&isset($newIdAlbum)&&!empty($newIdAlbum)){
+            $this->songModel->update($newTitleSong,$newIdAlbum, $id);      
+            header("Location: " . BASE_URL . "album/".$newIdAlbum);
+        }
+        else{
+            $this->songView->showError('error al editar cancion');
         }
     }
 }

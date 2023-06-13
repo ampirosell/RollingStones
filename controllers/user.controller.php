@@ -11,7 +11,6 @@ class UserController{
         $this->userView = new UserView();
     }
     public function serveLogin(){
-        AuthHelper::start();
         $this->userView->showLogin();
     }
     public function logout() {

@@ -10,13 +10,11 @@ class AlbumController{
         $this->albumView = new AlbumView();
     }
     public function home(){
-        AuthHelper::start();
         AuthHelper::checkTime();
         $this->albumView->showHome();
     }
 
     public function serveAllAlbums(){
-        AuthHelper::start();
         AuthHelper::checkTime();
         $albums=$this->albumModel->getAllAlbums();
         if(isset($albums)&&!empty($albums)){
@@ -27,7 +25,6 @@ class AlbumController{
         }
     }
     public function serveOneAlbumAndSongs($id_album){
-        AuthHelper::start();
         AuthHelper::checkTime();
         $fullAlbumSongs=$this->albumModel->getSongsByAlbumID($id_album);
         $album=$this->albumModel->getOneAlbum($id_album);
@@ -72,12 +69,10 @@ class AlbumController{
         }
     }
     public function sobre(){
-        AuthHelper::start();
         AuthHelper::checkTime();
         $this->albumView->showSobre();
     }
     public function showError($msg='error'){
-        AuthHelper::start();
         AuthHelper::checkTime();
         $this->albumView->showError($msg);
     }

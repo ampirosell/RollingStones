@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-12 02:41:09
+/* Smarty version 4.3.1, created on 2023-06-14 00:27:48
   from 'C:\xampp\htdocs\RollingStones\templates\songs.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_648669a5a89160_03415248',
+  'unifunc' => 'content_6488ed64a92ec9_67646532',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ef939ca447e729d66715960f731eb21190d6f6e8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\RollingStones\\templates\\songs.tpl',
-      1 => 1686530458,
+      1 => 1686694585,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_648669a5a89160_03415248 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6488ed64a92ec9_67646532 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="content">

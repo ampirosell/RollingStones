@@ -14,5 +14,4 @@ class UserView{
         $this->smarty->assign('page', 'Login');
         $this->smarty->display('login.tpl');
     }
-
 }

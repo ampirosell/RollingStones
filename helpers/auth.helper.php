@@ -9,13 +9,19 @@ class AuthHelper {
             session_start();
         }
     }
+    public static function setUser($user){
+        AuthHelper::start();
+        $_SESSION['time'] = time();
+        $_SESSION['ID'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+    }
     public static function checkTime(){
         AuthHelper::start();
         if(!isset($_SESSION['time'])){
             $_SESSION['time'] = time();
         }
         else {
-            if(time() - $_SESSION['time'] >300){
+            if(time() - $_SESSION['time'] > 300){//5 minutos
                 AuthHelper::logout();
                 header("Location:". BASE_URL . "login");
                 die();
@@ -26,14 +32,6 @@ class AuthHelper {
         AuthHelper::start();
         session_destroy();
     }
-
-    public static function setUser($user){
-        AuthHelper::start();
-        $_SESSION['time'] = time();
-        $_SESSION['ID'] = $user['id'];
-        $_SESSION['username'] = $user['username'];
-    }
-
     public static function checkLoggedIn() {
         AuthHelper::start();
         AuthHelper::checkTime();
@@ -42,7 +40,6 @@ class AuthHelper {
             die;
         }
     }
-
     public static function getLoggedUserName() {
         if (isset($_SESSION['username'])) {
             return $_SESSION['username'];
@@ -50,5 +47,4 @@ class AuthHelper {
             return null;
         }
     }
-
 }

@@ -65,6 +65,12 @@ switch ($params[0]) {
     case 'deleteAlbumConfirm':
         $AlbumController->deleteAlbum($params[1]);
         break;
+    case 'editS':
+        $SongController->editSong($params[1],$params[2]);
+        break;
+    case 'updateS':
+        $SongController->updateSong($params[1]);
+        break;
     default: 
         $AlbumController->showError('Error en router');
         break;

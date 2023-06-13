@@ -33,7 +33,17 @@ class songView{
         $this->smarty->assign('song', $song);
         $this->smarty->display('song.tpl');
     }
-
+    public function showEditSong($song,$album, $TodosLosAlbums){
+        $this->smarty->assign('page', 'Editar Cancion');
+        if(AuthHelper::getLoggedUserName()){   
+            $this->smarty->assign('username',AuthHelper::getLoggedUserName());
+        }
+        $this->smarty->assign('TodosLosAlbums', $TodosLosAlbums);
+        $this->smarty->assign('song', $song);
+        $this->smarty->assign('album', $album);
+        $this->smarty->display('templates/editSong.tpl');
+    
+    }
     public function showError($msg=' ') {
         if(AuthHelper::getLoggedUserName()){   
             $this->smarty->assign('username',AuthHelper::getLoggedUserName());
