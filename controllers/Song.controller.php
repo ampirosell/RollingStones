@@ -45,7 +45,7 @@ class songController{
         AuthHelper::checkLoggedIn();
         $song =$_POST["songName"];
         $album_id=$_POST["albumId"];
-        if(!empty($song)&&!empty($album_id)){
+        if(isset($song)&&!empty($song)&&isset($album_id)&&!empty($album_id)){
             $this->songModel-> insertSong($song,$album_id); 
             header("Location: " . BASE_URL . 'album'. '/' . $album_id); 
         }

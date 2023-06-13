@@ -23,7 +23,9 @@ class UserController{
         $username = $_POST['username'];
         $password = $_POST['password'];
         $user = $this->userModel->getUserByUsername($username);
-        if (!empty($user) && password_verify($password, $user['password_hash'])) {
+        if (isset($user)&&!empty($user)&&isset($username)&&!empty($username) 
+        && isset($password)&&!empty($password)
+        && password_verify($password, $user['password_hash'])) {
             AuthHelper::start();
             AuthHelper::setUser($user);
             header("Location: " . BASE_URL . 'home');

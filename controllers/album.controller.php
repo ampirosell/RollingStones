@@ -19,7 +19,7 @@ class AlbumController{
         AuthHelper::start();
         AuthHelper::checkTime();
         $albums=$this->albumModel->getAllAlbums();
-        if(!empty($albums)){
+        if(isset($albums)&&!empty($albums)){
             $this->albumView->showAllAlbums($albums);
         }
         else{
@@ -33,7 +33,7 @@ class AlbumController{
         $album=$this->albumModel->getOneAlbum($id_album);
         $title_album=$album->titulo_album;
         $year_release=$album->year_release;
-        if(!empty($fullAlbumSongs)){
+        if(isset($fullAlbumSongs)&&!empty($fullAlbumSongs)){
             $this->albumView->showSongsByAlbum($fullAlbumSongs,$id_album,$title_album,$year_release);
         }
         else{
@@ -49,9 +49,9 @@ class AlbumController{
         $title_album =$_POST["title_album"];
         $year_release=$_POST["year_release"];
         $img_cover=$_POST["img_cover"];
-        if(!empty($title_album)&&!empty($year_release)){
+        if(isset($title_album)&&isset($year_release)&&!empty($title_album)&&!empty($year_release)){
             $this->albumModel-> insertAlbum($title_album,$year_release,$img_cover); 
-            header("Location: " . BASE_URL . 'albums' );
+            header("Location: " . BASE_URL . 'albums');
         }
         else{
             $this->albumView->showError('error al insertar album');
