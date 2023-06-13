@@ -37,7 +37,7 @@ class AlbumController{
             $this->albumView->showSongsByAlbum($fullAlbumSongs,$id_album,$title_album,$year_release);
         }
         else{
-            $this->albumView->showError('error al obtener canciones');
+            $this->albumView->showError('error al obtener canciones del album');
         }
     }
     public function ShowAddAlbum(){
@@ -68,7 +68,7 @@ class AlbumController{
             header("Location: " . BASE_URL . 'albums'); 
         }
         else{
-            $this->albumView->showError('No se ha podido eliminar la canción');
+            $this->albumView->showError('No se ha podido eliminar el album');
         }
     }
     public function sobre(){

@@ -18,7 +18,12 @@ class songModel {
     public function getSong($id) {
         $sentencia = $this->db->prepare("SELECT * FROM `songs` WHERE id_song = ?");
         $sentencia->execute([$id]);
-        return $sentencia->fetch(PDO::FETCH_OBJ);
+        if(!empty($sentencia)){
+            return $sentencia->fetch(PDO::FETCH_OBJ);
+        }
+        else{
+            return 'error al obtener cancion';
+        }
     }
 
     public function getSelect(){

@@ -28,8 +28,9 @@ class songController{
         AuthHelper::start();
         AuthHelper::checkTime();
         $song = $this-> songModel-> getSong($id);
-        if (!empty($song))
+        if (isset($song)&&!empty($song)){
             $this-> songView -> showSong($song);
+        }
         else
             $this-> songView -> showError('No hay ninguna canción para mostrar.');
 

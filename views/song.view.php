@@ -34,12 +34,12 @@ class songView{
         $this->smarty->display('song.tpl');
     }
 
-    public function showError($msgError) {
+    public function showError($msg=' ') {
         if(AuthHelper::getLoggedUserName()){   
             $this->smarty->assign('username',AuthHelper::getLoggedUserName());
         }
         $this->smarty->assign('page', 'Error');
-        $this->smarty->assign('msgError', $msgError);
+        $this->smarty->assign('msg', $msg);
         $this->smarty->display('error.tpl');
     }
 }
