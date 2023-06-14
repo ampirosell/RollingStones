@@ -42,7 +42,6 @@ class songView{
         $this->smarty->assign('song', $song);
         $this->smarty->assign('album', $album);
         $this->smarty->display('templates/editSong.tpl');
-    
     }
     public function showError($msg=' ') {
         if(AuthHelper::getLoggedUserName()){   

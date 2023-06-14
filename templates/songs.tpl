@@ -8,7 +8,8 @@
     {/foreach}
 </ul>
 {if isset($username)}
-    <a href="{BASE_URL}deleteA/{$id_album}"> Eliminar </a>   
+    <a href="{BASE_URL}deleteA/{$id_album}">Eliminar</a>   <br><br>
+    <a href="{BASE_URL}editA/{$id_album}">Editar</a>
 {/if}
 </div>
 {include file="footer.tpl"}

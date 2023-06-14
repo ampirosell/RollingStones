@@ -56,6 +56,14 @@ class AlbumView{
         $this->smarty->assign('page', 'Eliminar Album');
         $this->smarty->display('deleteAlbumConfirmation.tpl');
     }
+    public function showEditAlbum($album){
+        $this->smarty->assign('page', 'Editar album');
+        if(AuthHelper::getLoggedUserName()){   
+            $this->smarty->assign('username',AuthHelper::getLoggedUserName());
+        }
+        $this->smarty->assign('album', $album);
+        $this->smarty->display('templates/editAlbum.tpl');
+    }
     public function showError($msg){
         if(AuthHelper::getLoggedUserName()){   
             $this->smarty->assign('username',AuthHelper::getLoggedUserName());

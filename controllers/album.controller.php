@@ -68,10 +68,34 @@ class AlbumController{
             $this->albumView->showError('No se ha podido eliminar el album');
         }
     }
+    public function editAlbum($id_album){
+        AuthHelper::checkLoggedIn();
+        $album=$this->albumModel->getOneAlbum($id_album);
+        if (!empty($album)&&isset($album))
+            $this-> albumView -> showEditAlbum($album);
+        else
+            $this-> albumView -> showError('No hay ningun album para mostrar.');
+            
+    }
+
+    public function updateAlbum($id){
+        AuthHelper::checkLoggedIn();
+        $newTitleAlbum=$_POST["titulo_album"];
+        $newYearAlbum=$_POST["year_release"];
+        $newImgAlbum =$_POST["img_cover"];
+        if(isset($newTitleAlbum)&&!empty($newTitleAlbum)&&isset($newYearAlbum)&&!empty($newYearAlbum)){
+            $this->albumModel->updateA($id,$newTitleAlbum,$newYearAlbum, $newImgAlbum);      
+            header("Location: " . BASE_URL . "album/".$id);
+        }
+        else{
+            $this->albumView->showError('error al editar cancion');
+        }
+    }
     public function sobre(){
         AuthHelper::checkTime();
         $this->albumView->showSobre();
     }
+
     public function showError($msg='error'){
         AuthHelper::checkTime();
         $this->albumView->showError($msg);

@@ -31,4 +31,9 @@ class AlbumModel{
         $query->execute([$id]);
         $query2->execute([$id]);
     }
+    public function updateA($id,$newTitleAlbum,$newYearAlbum, $newImgAlbum){
+        $query=$this->db->prepare("UPDATE `albums` SET `titulo_album`=? , `year_release`=? , `img_cover`= ?  WHERE id_album= ?");
+        $query->execute(array($newTitleAlbum,$newYearAlbum,$newImgAlbum,$id)); 
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
 }
