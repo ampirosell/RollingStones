@@ -1,11 +1,9 @@
 body {
-    margin:0;
-    padding: 0;
-    font-family:'Courier New', Courier, monospace;
-    background-color:#c9b2d2;
-    color:#3a3a3a;
+    background-color: #3d526855; /* Establece el color de fondo del body */
+    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif; /* Establece la fuente del texto */
+    margin: 0; /* Elimina el margen predeterminado del body */
+  }
 
-}
 
 /* Barra de navegación */
 .navbar {
@@ -15,7 +13,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #443357;
+    background-color: #44335771;
     color:#fff;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -46,20 +44,46 @@ body {
 }
     
     /* Contenido principal */
-.content, .container {
+.content{
     margin-top: 20%;
     text-align: center;
+    background-color: #ffffff1b; /* Establece el color de fondo del contenido */
+    border-radius: 20px; /* Establece la forma de píldora */
+}
+
+.content .albums{
+    display: contents;
 }
 input {
-    width: 45%;
-    border-radius: 5%;
-    background-color: #00000065;
-    color:#ffffff;
-    border-color: #443357;
-}
-.albums{
-    display: flexbox;
-}
+    border: none; /* Elimina el borde predeterminado */
+    outline: none; /* Elimina el contorno al hacer clic */
+    padding: 5px 10px; /* Ajusta el espaciado interno de la píldora */
+    border-radius: 20px; /* Establece la forma de píldora */
+    background-color: #eaeaea; /* Establece el color de fondo de la píldora */
+    font-weight: bold; /* Establece la negrita */
+    color: black; /* Establece el color de la fuente en negro */
+  }
+  
+  input:focus {
+    background-color: #dcdcdc; /* Cambia el color de fondo al tener el foco */
+  }
+  select {
+    border: none; /* Elimina el borde predeterminado */
+    outline: none; /* Elimina el contorno al hacer clic */
+    padding: 5px 10px; /* Ajusta el espaciado interno de la píldora */
+    border-radius: 20px; /* Establece la forma de píldora */
+    background-color: #eaeaea; /* Establece el color de fondo de la píldora */
+    font-weight: bold; /* Establece la negrita */
+    color: black; /* Establece el color de la fuente en negro */
+    appearance: none; /* Elimina el estilo predeterminado del select en algunos navegadores */
+  }
+  
+  select:focus {
+    background-color: #dcdcdc; /* Cambia el color de fondo al tener el foco */
+  }
+  
+  
+
 .cover{
     width: 50%;
     aspect-ratio: 3/2;
@@ -72,13 +96,63 @@ h1, h2, h3 {
     color: #000000;
 }
 a {
-    color: #000000;
-    border-radius: 2%;
-    border-color:#443357;
-}
+    text-decoration: none; /* Elimina el subrayado */
+    font-weight: bold; /* Establece la negrita */
+    color: black; /* Establece el color de la fuente en negro */
+    display: inline-block; /* Permite establecer un ancho y alto */
+    padding: 0.5rem 1rem; /* Ajusta el espaciado interno de la píldora */
+    border-radius: 1.8rem; /* Establece la forma de píldora */
+    background-color: #3c5a5a7d; /* Establece el color de fondo de la píldora */
+  }
+  
+  a:hover {
+    background-color: #dcdcdc; /* Cambia el color de fondo al pasar el ratón */
+  }
+  
 p {
     line-height: 1.5;
 }
+
+.card {
+    align-items: center;
+    background-color: #8299b078;
+    border-radius: 1rem;
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+    margin: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateX(-00.5rem);
+}
+
+.card img {
+    border-radius: 50%;
+    height: 20rem;
+    margin-bottom: 0.5rem;
+    width: 20rem;
+}
+
+.card h2 {
+    color: #333333;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: #666666;
+    font-size: 1.2rem;
+}
 .footer{
     text-align: center;
-}
+    padding: 10px; /* Ajusta el espaciado interno del footer */
+    background-color: #eaeaea52; /* Establece el color de fondo del footer */
+    border-radius: 20px; /* Establece la forma de píldora */
+    margin: 20px; /* Establece el margen exterior del footer */
+  }
+  .footer p {
+    margin: 0; /* Elimina el margen predeterminado del párrafo dentro del footer */
+  }

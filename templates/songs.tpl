@@ -4,7 +4,9 @@
     <h2>{$title_album}</h2>
     <p>Año de lanzamiento: {$year_release}</p>
     {foreach $songs as $song}
-        <li>Titulo de la cancion numero {$song->id_song}: <a href="{BASE_URL}song/{$song->id_song}">{$song->title_song}</a></li><br>
+        <div class='card'>
+            <ol>Titulo de la cancion numero {$song->id_song}: <a href="{BASE_URL}song/{$song->id_song}">{$song->title_song}</a></ol><br>
+        </div>
     {/foreach}
 </ul>
 {if isset($username)}
