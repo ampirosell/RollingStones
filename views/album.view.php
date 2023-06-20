@@ -38,7 +38,7 @@ class AlbumView{
         if(AuthHelper::getLoggedUserName()){   
             $this->smarty->assign('username',AuthHelper::getLoggedUserName());
         }
-        $this->smarty->assign('page','Sobre');
+        $this->smarty->assign('page','Sobre nosotras');
         $this->smarty->display('sobre.tpl');
     }
     public function showAddAlbum(){
