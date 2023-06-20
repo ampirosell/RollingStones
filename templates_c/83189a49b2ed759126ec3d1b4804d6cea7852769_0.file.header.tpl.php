@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-20 19:07:40
+/* Smarty version 4.3.1, created on 2023-06-20 19:53:36
   from 'C:\xampp\htdocs\REPO2_RS_C_AMPI\RollingStones\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6491dcdc40fd87_23417476',
+  'unifunc' => 'content_6491e7a0c9f409_47443182',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '83189a49b2ed759126ec3d1b4804d6cea7852769' => 
     array (
       0 => 'C:\\xampp\\htdocs\\REPO2_RS_C_AMPI\\RollingStones\\templates\\header.tpl',
-      1 => 1687280855,
+      1 => 1687283523,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6491dcdc40fd87_23417476 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6491e7a0c9f409_47443182 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
     <html lang="en">
         <head>
@@ -47,7 +47,7 @@ songs'>Canciones</a></li>
                         <li><a href='<?php echo BASE_URL;?>
 addAlbum'>Agregar album nuevo</a></li>
                         <li><a href='<?php echo BASE_URL;?>
-addSong'>Agregar cancion en album</a></li>
+addSong'>Agregar canción en album</a></li>
                         <li><a href='<?php echo BASE_URL;?>
 sobre'>Sobre nosotras</a></li>
                         <li><a href='<?php echo BASE_URL;?>
