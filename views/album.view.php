@@ -20,7 +20,7 @@ class AlbumView{
             $this->smarty->assign('username',AuthHelper::getLoggedUserName());
         }
         $this->smarty->assign('albums', $albums);
-        $this->smarty->assign('page','Albums de los Rolling Stones');
+        $this->smarty->assign('page','Todos los albums de los Rolling Stones');
         $this->smarty->display('albums.tpl');
     }
     public function showSongsByAlbum($albumCompleto,$id_album, $title_album, $year_release){
@@ -31,7 +31,7 @@ class AlbumView{
         $this->smarty->assign('year_release', $year_release);
         $this->smarty->assign('songs', $albumCompleto);
         $this->smarty->assign('id_album', $id_album);
-        $this->smarty->assign('page','Canciones de Rolling Stones');
+        $this->smarty->assign('page','Canciones de '.$title_album);
         $this->smarty->display('songs.tpl');
     }
     public function showSobre(){
@@ -45,7 +45,7 @@ class AlbumView{
         if(AuthHelper::getLoggedUserName()){   
             $this->smarty->assign('username',AuthHelper::getLoggedUserName());
         }
-        $this->smarty->assign('page', 'Agregar Album');
+        $this->smarty->assign('page', 'Agregar album');
         $this->smarty->display('addAlbum.tpl');
     }
     public function showDeleteAlbumConfirmation($id){
@@ -53,11 +53,11 @@ class AlbumView{
             $this->smarty->assign('username',AuthHelper::getLoggedUserName());
         }
         $this->smarty->assign('id', $id);
-        $this->smarty->assign('page', 'Eliminar Album');
+        $this->smarty->assign('page', 'Eliminar album '.$id);
         $this->smarty->display('deleteAlbumConfirmation.tpl');
     }
     public function showEditAlbum($album){
-        $this->smarty->assign('page', 'Editar album');
+        $this->smarty->assign('page', 'Editar album '.$album->title_album);
         if(AuthHelper::getLoggedUserName()){   
             $this->smarty->assign('username',AuthHelper::getLoggedUserName());
         }

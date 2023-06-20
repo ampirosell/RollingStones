@@ -1,9 +1,9 @@
 {include file="header.tpl"}
 <div class="content">
-    <h1> Agrega una cancion a un album</h1>
+    <h1> Agrega una canción a un album</h1>
     <form action="addS" method="post">
-        <label for="songName" >Titulo de la cancion</label><br>
-        <input type="text" name="songName" placeholder="Inserte nombre de cancion"><br>
+        <label for="songName" >Titulo de la canción</label><br>
+        <input type="text" name="songName" placeholder="Inserte nombre de canción"><br><br>
         <select name="albumId">
             {foreach from=$select  item=$item}
                 <option value="{$item->id_album}">{$item->titulo_album} </option>

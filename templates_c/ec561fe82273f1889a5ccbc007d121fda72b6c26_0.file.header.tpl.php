@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-11 00:10:03
+/* Smarty version 4.3.1, created on 2023-06-20 19:45:03
   from 'C:\xampp\htdocs\RollingStones\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_6484f4bb378032_89001166',
+  'unifunc' => 'content_6491e59f0fee47_97216908',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ec561fe82273f1889a5ccbc007d121fda72b6c26' => 
     array (
       0 => 'C:\\xampp\\htdocs\\RollingStones\\templates\\header.tpl',
-      1 => 1686434998,
+      1 => 1687283031,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6484f4bb378032_89001166 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6491e59f0fee47_97216908 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
     <html lang="en">
         <head>
@@ -28,6 +28,7 @@ function content_6484f4bb378032_89001166 (Smarty_Internal_Template $_smarty_tpl)
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title><?php echo $_smarty_tpl->tpl_vars['page']->value;?>
 </title>
+            <link rel="icon" type="image/x-icon" href="imgs/favicon.png">
             <link rel="stylesheet" href="<?php echo BASE_URL;?>
 css\style.css">
         </head>
@@ -46,7 +47,7 @@ songs'>Canciones</a></li>
                         <li><a href='<?php echo BASE_URL;?>
 addAlbum'>Agregar album nuevo</a></li>
                         <li><a href='<?php echo BASE_URL;?>
-addSong'>Agregar cancion en album</a></li>
+addSong'>Agregar canción en album</a></li>
                         <li><a href='<?php echo BASE_URL;?>
 sobre'>Sobre nosotras</a></li>
                         <li><a href='<?php echo BASE_URL;?>

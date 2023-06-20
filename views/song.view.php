@@ -8,7 +8,7 @@ class songView{
         $this->smarty = new Smarty();
     }
     public function showSongs($songs) {
-        $this->smarty->assign('page', 'Canciones de los Rolling Stones');
+        $this->smarty->assign('page', 'Todas las canciones de los Rolling Stones');
         if(AuthHelper::getLoggedUserName()){   
             $this->smarty->assign('username',AuthHelper::getLoggedUserName());
         }
@@ -16,7 +16,7 @@ class songView{
         $this->smarty->display('showAllSongs.tpl');
     }
     public function showAddSong($select) {
-        $this->smarty->assign('page', 'Agregar una cancion');
+        $this->smarty->assign('page', 'Agregar una canción');
         if(AuthHelper::getLoggedUserName()){   
             $this->smarty->assign('username',AuthHelper::getLoggedUserName());
         }
@@ -26,7 +26,7 @@ class songView{
     }
     
     public function showSong($song) {
-        $this->smarty->assign('page', 'Cancion');
+        $this->smarty->assign('page', 'Canción '.$song->title_song);
         if(AuthHelper::getLoggedUserName()){   
             $this->smarty->assign('username',AuthHelper::getLoggedUserName());
         }
@@ -34,7 +34,7 @@ class songView{
         $this->smarty->display('song.tpl');
     }
     public function showEditSong($song,$album, $TodosLosAlbums){
-        $this->smarty->assign('page', 'Editar Cancion');
+        $this->smarty->assign('page', 'Editar canción '.$song->title_song);
         if(AuthHelper::getLoggedUserName()){   
             $this->smarty->assign('username',AuthHelper::getLoggedUserName());
         }

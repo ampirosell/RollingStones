@@ -5,7 +5,7 @@
     <p>Año de lanzamiento: {$year_release}</p>
     {foreach $songs as $song}
         <div class='card'>
-            <ol>Titulo de la cancion numero {$song->id_song}: <a href="{BASE_URL}song/{$song->id_song}">{$song->title_song}</a></ol><br>
+            <ol>Titulo de la canción numero {$song->id_song}: <a href="{BASE_URL}song/{$song->id_song}">{$song->title_song}</a></ol><br>
         </div>
     {/foreach}
 </ul>
