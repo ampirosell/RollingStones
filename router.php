@@ -72,7 +72,7 @@ switch ($params[0]) {
         $SongController->updateSong($params[1]);
         break;
     case 'editA':
-        $AlbumController->editALbum($params[1]);
+        $AlbumController->editAlbum($params[1]);
         break;
     case 'updateA':
         $AlbumController->updateAlbum($params[1]);
